@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src='./jquery.js'></script>
+<script type="text/javascript">
+//柯里化函数
+/*	function sum(item)
+	{
+		var cur=item;
+		var inner=function(next)
+		{
+			if(next!==null)
+			{
+				cur+=next
+			}
+			return inner
+		}
+		inner.toString=function()
+		{
+			return cur
+		}
+		return inner;
+	}
+	console.log(sum(1)(2)) */
+//防抖动函数
+/*function debounce(func,wait)
+{
+	var timeout
+	
+		
+		return function()
+		{
+			var context=this;
+			var later=function()
+			{
+				timeout=null;
+				console.log(timeout)
+					func.apply(context)
+				
+			}
+		    
+			
+			clearTimeout(timeout)
+			timeout=setTimeout(later,wait)
+			
+			
+			
+		}
+	
+}
+var i=0
+var aa=debounce(function(){console.log(i++)},200)
+window.addEventListener('resize',aa)*/
+//执行上下文
+/*var name='aa'
+var obj={
+	name:'ss',
+	func:function(){
+		return function(){
+			return this.name
+		}
+	}
+}
+console.log(obj.func()())*/
+//闭包
+var scope="global"
+function check(){
+	var scope="local"
+	function f(){
+		console.log(scope)
+	}
+	return f
+}
+var foo=check()
+foo()
+</script>
+	<title></title>
+</head>
+<body>
+<p></p>
+</body>
+</html>
